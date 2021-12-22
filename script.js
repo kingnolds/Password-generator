@@ -18,7 +18,7 @@ function generatePassword() {
     var length = prompt('Input number of characters (from 8-128)',8);
     if (length<8 || length>128) {
         alert("Must be between 8 and 128")
-        return;
+        return " ";
     } ;
   
     var lowerCase = confirm("Do you want to include lowercase letters?");
@@ -28,7 +28,7 @@ function generatePassword() {
   
     if (!lowerCase && !upperCase && !numbers && !specialChar) {
         alert("You must select at least one type of character")
-        return;
+        return " ";
     }
   
     var lowCase = "abcdefghijklmnopqrstuvwxyz";
@@ -52,7 +52,7 @@ function generatePassword() {
     var randomPassword = ""
     
     for (let i = 0; i < length; i++) {
-        randomPassword += characters.charAt(Math.floor(Math.random() * length));
+        randomPassword += characters.charAt(Math.floor(Math.random() * characters.length));
         }
     return randomPassword
     }
